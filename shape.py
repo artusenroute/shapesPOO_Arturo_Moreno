@@ -1,5 +1,6 @@
+from abc import ABC, abstractmethod
 #Create the class Shape
-class Shape():
+class Shape(ABC):
     def __init__(self,color = 'red', filled = True):
         self._color = color
         self._filled = filled
@@ -15,6 +16,14 @@ class Shape():
     
     def setFilled(self, filled):
         self._filled = filled
+
+    @abstractmethod
+    def getArea(self):
+        pass
+    
+    @abstractmethod
+    def getPerimeter(self):
+        pass
         
     def __str__(self):
         try:
